@@ -137,7 +137,11 @@ IntList& IntList::operator=(const IntList& source){
         head=head->next;
         delete temp;
     }
+    
     tail=nullptr;
+    if(source.head==nullptr){
+        return *this;
+    }
     Node* curr=source.head;
     while(curr!=nullptr){
         this->push_back(curr->info);
