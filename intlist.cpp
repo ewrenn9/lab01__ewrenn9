@@ -10,6 +10,11 @@ using std::cout;
 // copy constructor
 IntList::IntList(const IntList& source) {
     //IMPLEMENT THIS
+    if(source.head==nullptr){
+        head=nullptr;
+        tail=nullptr;
+        return;
+    }
     head = new Node();
     Node* curr= head;
     Node* track = source.head;
